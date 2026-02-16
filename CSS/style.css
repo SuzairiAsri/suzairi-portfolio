@@ -1,0 +1,542 @@
+/* =========================================
+   1. DARK THEME VARIABLES (Blue Accent)
+   ========================================= */
+:root {
+    --bg-body: #0b1120;
+    /* Very dark blue/black */
+    --bg-card: #1e293b;
+    /* Lighter dark blue for boxes */
+    --bg-input: #0f172a;
+    /* Dark input background */
+    --text-main: #f8fafc;
+    /* White text */
+    --text-muted: #94a3b8;
+    /* Gray text */
+    --accent: #3b82f6;
+    /* Bright Blue Accent */
+    --accent-hover: #2563eb;
+    /* Darker Blue for hover */
+    --border: #334155;
+    /* Dark gray border */
+}
+
+/* =========================================
+   2. GLOBAL RESETS
+   ========================================= */
+html {
+    background-color: #0b1120;
+    /* Matches your --bg-body color */
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling at the root level */
+    width: 100%;
+}
+
+body {
+    background-color: var(--bg-body);
+    margin: 0;
+    padding-top: 70px;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    /* Prevents unwanted horizontal scrollbars */
+    /* Space for fixed navbar */
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: var(--text-main);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+hr {
+    border-color: var(--border);
+    opacity: 0.3;
+    margin: 3rem 0;
+}
+
+/* =========================================
+   3. NAVBAR
+   ========================================= */
+.navbar-custom {
+    background-color: rgba(11, 17, 32, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-custom .container-fluid {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--accent) !important;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-muted) !important;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--accent) !important;
+}
+
+/* Underline effect */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Contact Button */
+.join-button {
+    background-color: var(--accent) !important;
+    border: none !important;
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-weight: 600;
+    color: white !important;
+}
+
+.join-button:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* =========================================
+   4. SIDEBAR SOCIALS
+   ========================================= */
+.social-sidebar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px 0 0 10px;
+    z-index: 1000;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    font-size: 1.2rem;
+}
+
+/* Updated to match your HTML classes */
+.resume {
+    background-color: #dc2626;
+    /* PDF Red */
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.email {
+    background-color: var(--accent);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .social-sidebar {
+        flex-direction: row;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        border-radius: 0;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   5. HERO SECTION
+   ========================================= */
+.mainphoto-section {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.mainphoto-container img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    filter: brightness(0.4);
+    /* Darken image */
+}
+
+.mainphoto-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    z-index: 2;
+}
+
+.mainphoto-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.mainphoto-text p {
+    font-size: 1.5rem;
+    color: #e2e8f0;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 30px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.btn-hero:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* =========================================
+   6. SECTIONS (About, Projects, Skills)
+   ========================================= */
+/* Headers */
+h2,
+h3 {
+    color: var(--accent);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Project Cards */
+/* =========================================
+   NEW HORIZONTAL PROJECT CARDS
+   ========================================= */
+.project-card-horizontal {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card-horizontal:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* Left Side: Content */
+.project-content {
+    flex: 1;
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.project-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Feature List with Asterisks */
+.project-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.project-features li {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace for code look */
+}
+
+.project-features li::before {
+    content: "* ";
+    color: var(--accent);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Tech Stack Icons/Text */
+.tech-stack {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.tech-stack i {
+    color: var(--text-muted);
+}
+
+/* Bottom Row (Button + Status) */
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.status-badge {
+    color: #10b981;
+    /* Green color for 'Completed' */
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Right Side: Image */
+.project-image-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #0f172a;
+    /* Dark background behind image */
+    border: 1px solid var(--border);
+    height: 400px;
+    /* Fixed height for consistency */
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.project-card-horizontal:hover .project-image {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+}
+
+/* Button Style Update for Projects */
+.btn-project {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid var(--border);
+    padding: 10px 24px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-project:hover {
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .project-card-horizontal {
+        flex-direction: column-reverse;
+        /* Image on top for mobile */
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .project-image-container {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* =========================================
+   7. SKILLS SECTION
+   ========================================= */
+.information-section {
+    color: #ffffff !important;
+    background-color: var(--bg-card) !important;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.skill-category-title {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    /* Space between tags */
+}
+
+/* Individual Skill Tag Design */
+.skill-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Subtle dark background */
+    border: 1px solid var(--border);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    /* Rounded corners like the reference */
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    background-color: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill-tag i {
+    font-size: 1.3rem;
+}
+
+/* Brand Colors for Icons */
+.html-icon {
+    color: #e34c26;
+}
+
+.css-icon {
+    color: #264de4;
+}
+
+.js-icon {
+    color: #f0db4f;
+}
+
+.react-icon {
+    color: #61dbfb;
+}
+
+.bootstrap-icon {
+    color: #7952b3;
+}
+
+.tailwind-icon {
+    color: #06b6d4;
+}
+
+.python-icon {
+    color: #3776ab;
+}
+
+.flask-icon {
+    color: white;
+}
+
+.sql-icon {
+    color: #00758f;
+}
+
+.java-icon {
+    color: #e76f00;
+}
+
+.git-icon {
+    color: #f05032;
+}
+
+.github-icon {
+    color: white;
+}
+
+.vscode-icon {
+    color: #007acc;
+}
+
+.figma-icon {
+    color: #f24e1e;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+.footer {
+    background-color: #020617;
+    /* Darkest black/blue */
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.social-link {
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-link:hover {
+    color: var(--accent);
+}
