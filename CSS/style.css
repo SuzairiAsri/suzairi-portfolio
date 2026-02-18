@@ -540,3 +540,95 @@ h3 {
 .social-link:hover {
     color: var(--accent);
 }
+
+/* Modal Styling */
+.bg-dark-custom {
+    background-color: var(--bg-card);
+    /* Matches your existing card color */
+    border: 1px solid var(--border);
+}
+
+/* Main Image Area */
+.main-image {
+    height: 500px;
+    object-fit: contain;
+    /* Ensures the whole screenshot is visible */
+    background-color: #000;
+    /* Black background for non-standard aspect ratios */
+}
+
+/* Thumbnail Strip */
+.thumbnail-container {
+    padding-bottom: 5px;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg-body);
+}
+
+.thumb-img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumb-img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Highlight the active thumbnail */
+.thumb-img.active-thumb {
+    opacity: 1;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Description Box Typography */
+.text-accent {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* =========================================
+   9. MODAL & GALLERY FIXES
+   ========================================= */
+
+/* Fix: Bring modal ABOVE the fixed navbar */
+.modal {
+    z-index: 10000 !important;
+}
+
+.modal-backdrop {
+    z-index: 9999 !important;
+}
+
+/* Fix: Make the 'Close' X button white so it's visible */
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Fix: Ensure the modal background is definitely dark */
+.modal-content {
+    background-color: #1e293b !important;
+    /* Matches your --bg-card */
+    color: #f8fafc !important;
+    /* Matches your --text-main */
+}
+
+/* Optional: Tweaks for the main image size on smaller screens */
+@media (max-width: 768px) {
+    .main-image {
+        height: 300px;
+        /* Smaller height for mobile */
+    }
+
+    .project-card-horizontal {
+        padding: 1.5rem;
+        /* Less padding on mobile */
+    }
+}

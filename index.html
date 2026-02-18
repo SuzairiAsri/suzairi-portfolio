@@ -92,18 +92,16 @@
           <h3 class="project-title">NYP Judo Club Website Project</h3>
           <p class="project-desc">
             A responsive multi-page website developed for a school project using HTML, CSS, JavaScript, and Bootstrap.
-            The website enchances the club's presence, improve accessibility of information, and encourages membership
-            sign-ups through navigation and engaging user interface design.
+            The website enhances the club's presence, improves accessibility, and encourages sign-ups.
           </p>
 
           <div class="mb-3">
             <h5 class="text-white mb-3" style="font-size: 1rem;">Features</h5>
             <ul class="project-features">
               <li>Responsive Navigation Bar using Bootstrap 5</li>
-              <li>Interactive search bar functionality with JavaScript</li>
-              <li>Image carousel with Bootstrap 5 and Animate Scroll Effects</li>
+              <li>Interactive search bar functionality</li>
+              <li>Image carousel with Animate Scroll Effects</li>
               <li>Multimedia integration (Gallery and Instagram)</li>
-              <li>Dynamic content loading with JavaScript</li>
             </ul>
           </div>
 
@@ -115,23 +113,23 @@
           </div>
 
           <div class="project-footer">
-            <a href="#" class="btn-project">View Project</a>
+            <button type="button" class="btn-project" data-bs-toggle="modal" data-bs-target="#judoProjectModal">
+              View Gallery
+            </button>
             <span class="status-badge">Completed</span>
           </div>
         </div>
-
         <div class="project-image-container">
           <img src="Photos/CCA Main Page.png" alt="CCA Main Page" class="project-image">
         </div>
+
       </div>
-
-
       <div class="project-card-horizontal">
 
         <div class="project-content">
-          <h3 class="project-title">AI-Powered Crop Health Monitoring Web Application</h3>
+          <h3 class="project-title">AI-Powered Crop Health Monitoring</h3>
           <p class="project-desc">
-            An intelligent leaves detection system designed for urban farming.
+            An intelligent leaf detection system designed for urban farming.
             It uses computer vision to identify pests in real-time and alert farmers via a dashboard.
           </p>
 
@@ -153,16 +151,17 @@
           </div>
 
           <div class="project-footer">
-            <a href="#" class="btn-project">View Project</a>
+            <button type="button" class="btn-project" data-bs-toggle="modal" data-bs-target="#cropProjectModal">
+              View Gallery
+            </button>
             <span class="status-badge">In Progress</span>
           </div>
         </div>
-
         <div class="project-image-container">
           <img src="Photos/AI-Powered Crops Page.png" alt="AI-Powered Crops Page" class="project-image">
         </div>
-      </div>
 
+      </div>
     </section>
 
     <hr>
@@ -215,16 +214,197 @@
           </a>
           <a href="mailto:zairi2002@gmail.com" class="social-link text-decoration-none">
             <i class="fas fa-envelope"></i> Email
+            <span class="ms-2" style="opacity:.8;">zairi2002@gmail.com</span>
           </a>
         </div>
 
         <div class="col-md-6 text-center text-md-end pe-md-5 py-3">
-          <p class="mb-0">&copy; 2026 Suzairi. All rights reserved.</p>
+          <p class="mb-0">&copy; 2026 Suzairi. All rights reserved.
+          </p>
         </div>
 
       </div>
     </div>
   </footer>
+  <div class="modal fade" id="cropProjectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content bg-dark-custom">
+
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title text-white">AI-Powered Crop Health System</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-0">
+
+          <div id="mainGalleryCarousel" class="carousel slide carousel-fade" data-bs-interval="false">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active" data-desc-title="Admin Dashboard"
+                data-desc-text="A real-time overview of the farm's status. It tracks total analyzed images and inventory levels (e.g., 'Critical' status), providing immediate visual feedback for system administrators.">
+                <img src="Photos/Screenshot 2026-02-18 172314.png" class="d-block w-100 main-image" alt="Dashboard">
+              </div>
+
+              <div class="carousel-item" data-desc-title="AI Analysis History"
+                data-desc-text="This module tracks the health history of crop batches. Using Python and TensorFlow, the system classifies crops as 'Healthy' or 'Infected' and stores the confidence score for each scan.">
+                <img src="Photos/Screenshot 2026-02-18 172702.png" class="d-block w-100 main-image" alt="Analysis">
+              </div>
+
+              <div class="carousel-item" data-desc-title="Treatment Library"
+                data-desc-text="A knowledge base for pest control. When the AI detects a pest (e.g., Flea Beetle), it suggests specific treatment protocols like 'Sticky Trap Development' or fungicide applications.">
+                <img src="Photos/Screenshot 2026-02-18 181858.png" class="d-block w-100 main-image" alt="Treatments">
+              </div>
+
+              <div class="carousel-item" data-desc-title="Inventory Management"
+                data-desc-text="Tracks stock levels for fertilizers and plants. The interface uses color-coded badges (Red for Low Stock) to alert users to reorder supplies immediately.">
+                <img src="Photos/Screenshot 2026-02-18 182022.png" class="d-block w-100 main-image" alt="Inventory">
+              </div>
+
+            </div>
+            <button class="carousel-control-prev d-none" type="button" data-bs-target="#mainGalleryCarousel"
+              data-bs-slide="prev"></button>
+            <button class="carousel-control-next d-none" type="button" data-bs-target="#mainGalleryCarousel"
+              data-bs-slide="next"></button>
+          </div>
+
+          <div class="container-fluid py-3" style="background-color: #0f172a;">
+            <div class="row">
+
+              <div class="col-md-7 d-flex align-items-center">
+                <div class="thumbnail-container d-flex gap-2 overflow-auto" style="white-space: nowrap;">
+                  <img src="Photos/Screenshot 2026-02-18 172314.png" class="thumb-img active-thumb"
+                    onclick="goToSlide(0)">
+                  <img src="Photos/Screenshot 2026-02-18 172702.png" class="thumb-img" onclick="goToSlide(1)">
+                  <img src="Photos/Screenshot 2026-02-18 181858.png" class="thumb-img" onclick="goToSlide(2)">
+                  <img src="Photos/Screenshot 2026-02-18 182022.png" class="thumb-img" onclick="goToSlide(3)">
+                </div>
+              </div>
+
+              <div class="col-md-5 border-start border-secondary ps-4">
+                <h4 id="desc-title" class="text-accent mb-2">Admin Dashboard</h4>
+                <p id="desc-text" class="text-light small" style="line-height: 1.6;">
+                  A real-time overview of the farm's status. It tracks total analyzed images and inventory levels...
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="judoProjectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title">NYP Judo Club Website</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-0">
+
+          <div id="judoGalleryCarousel" class="carousel slide carousel-fade" data-bs-interval="false">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active" data-desc-title="Home Page & Hero Banner"
+                data-desc-text="The landing page features a high-quality hero image with a clear call-to-action ('Start Your Journey Today'). The responsive navigation bar ensures easy access to About, Gallery, and Events pages.">
+                <img src="Photos/CCA Main Page.png" class="d-block w-100 main-image" alt="Home Page">
+              </div>
+
+              <div class="carousel-item" data-desc-title="Multimedia Gallery"
+                data-desc-text="An interactive gallery showcasing the club's training and events. This section uses CSS Grid for layout and JavaScript to handle image modals, allowing users to view full-size photos of club activities.">
+                <img src="Photos/Gallery.png" class="d-block w-100 main-image" alt="Gallery Page">
+              </div>
+
+              <div class="carousel-item" data-desc-title="Interactive Search and Events"
+                data-desc-text="A custom JavaScript search bar that allows users to quickly filter through club events and announcements without reloading the page, improving the overall user experience.">
+                <img src="Photos/About Us.png" class="d-block w-100 main-image" alt="Search Feature">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="container-fluid py-3" style="background-color: rgba(15, 23, 42, 0.5);">
+            <div class="row">
+
+              <div class="col-md-7 d-flex align-items-center mb-3 mb-md-0">
+                <div class="d-flex gap-2 overflow-auto pb-2">
+                  <img src="Photos/CCA Main Page.png" class="thumb-img judo-thumb active-thumb"
+                    onclick="goToSlideJudo(0)">
+                  <img src="Photos/Gallery.png" class="thumb-img judo-thumb" onclick="goToSlideJudo(1)">
+                  <img src="Photos/About Us.png" class="thumb-img judo-thumb" onclick="goToSlideJudo(2)">
+                </div>
+              </div>
+
+              <div class="col-md-5 border-start border-secondary ps-4">
+                <h4 id="judo-desc-title" style="color: var(--accent);">Home Page & Hero Banner</h4>
+                <p id="judo-desc-text" class="small text-secondary-light">
+                  The landing page features a high-quality hero image with a clear call-to-action...
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    /* =========================================
+       LOGIC FOR CROP HEALTH PROJECT (EXISTING)
+       ========================================= */
+    function goToSlide(slideIndex) {
+      const carouselElement = document.getElementById('mainGalleryCarousel');
+      const carouselInstance = bootstrap.Carousel.getOrCreateInstance(carouselElement);
+      carouselInstance.to(slideIndex);
+    }
+
+    const cropCarousel = document.getElementById('mainGalleryCarousel');
+    cropCarousel.addEventListener('slide.bs.carousel', function (event) {
+      const nextSlide = event.relatedTarget;
+      const title = nextSlide.getAttribute('data-desc-title');
+      const text = nextSlide.getAttribute('data-desc-text');
+      const index = event.to;
+
+      document.getElementById('desc-title').innerText = title;
+      document.getElementById('desc-text').innerText = text;
+
+      document.querySelectorAll('.thumb-img:not(.judo-thumb)').forEach(img => img.classList.remove('active-thumb'));
+      const thumbs = document.querySelectorAll('.thumb-img:not(.judo-thumb)');
+      if (thumbs[index]) thumbs[index].classList.add('active-thumb');
+    });
+
+
+    /* =========================================
+       LOGIC FOR JUDO CLUB PROJECT (NEW)
+       ========================================= */
+    function goToSlideJudo(slideIndex) {
+      const carouselElement = document.getElementById('judoGalleryCarousel');
+      const carouselInstance = bootstrap.Carousel.getOrCreateInstance(carouselElement);
+      carouselInstance.to(slideIndex);
+    }
+
+    const judoCarousel = document.getElementById('judoGalleryCarousel');
+    judoCarousel.addEventListener('slide.bs.carousel', function (event) {
+      const nextSlide = event.relatedTarget;
+      const title = nextSlide.getAttribute('data-desc-title');
+      const text = nextSlide.getAttribute('data-desc-text');
+      const index = event.to;
+
+      // Update Judo-specific text IDs
+      document.getElementById('judo-desc-title').innerText = title;
+      document.getElementById('judo-desc-text').innerText = text;
+
+      // Update Judo-specific thumbnails
+      document.querySelectorAll('.judo-thumb').forEach(img => img.classList.remove('active-thumb'));
+      const thumbs = document.querySelectorAll('.judo-thumb');
+      if (thumbs[index]) thumbs[index].classList.add('active-thumb');
+    });
+  </script>
 
 
 </body>
